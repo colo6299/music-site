@@ -1,0 +1,14 @@
+
+<br/>
+<h2> <a href="/musician/{{ album.artist.id }}">{{ album.artist.name }}</a>  </h2>
+<h1> {{ album.title }} -- {{ album.release_year }}</h1>
+
+<h3> {{ album.description }} </h3>
+
+<ul>
+{% for song in album.song_set.all %}
+
+<li><a href="/song/{{ song.id }}">{{ song.title }}</a></li>
+
+{% endfor %}
+</ul>

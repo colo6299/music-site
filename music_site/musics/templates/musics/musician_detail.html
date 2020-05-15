@@ -1,0 +1,28 @@
+
+
+
+
+
+
+
+<a href="/">-Go back-</a>
+<h1> {{ musician.name }} </h1>
+<h3> {{ musician.description }} </h3>
+<br/>
+Albums:
+<ul>
+{% for album in musician.album_set.all %}
+
+<li><a href="/album/{{ album.id }}">{{ album.title }}</a></li>
+
+{% endfor %}
+</ul>
+<br/>
+Songs:
+<ul>
+    {% for song in musician.song_set.all %}
+    
+    <li><a href="/song/{{ song.id }}">{{ song.title }}</a></li>
+    
+    {% endfor %}
+</ul>
